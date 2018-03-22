@@ -52,6 +52,11 @@ By default log analyzer will count all requests and sort them in descending orde
 ```
 Values in columns can be set to any of the values in logs files which can be seen here http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html#access-log-entry-format. There are total of 3 extra fields added to these which are `count`, `total_time` and `requested_resource`, `client`, `backend`.
 
+
+Fields are:
+timestamp elb client:port backend:port request_processing_time backend_processing_time response_processing_time elb_status_code backend_status_code received_bytes sent_bytes "request" "user_agent" ssl_cipher ssl_protocol
+
+
 When `count` is specified, it serves as a **groupBy** method that counts values in the other column and groups them together. Note that column1 is `count` by default.
 
 `total_time` is obtained by summing up `request_processing_time`, `backend_processing_time` and `response_processing_time`.
